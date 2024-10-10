@@ -1,0 +1,38 @@
+﻿@model BaiKiemTra03_03.Models.Contract
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+<div class="container mt-5">
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Tên Hợp Đồng</th>
+                <th>Ngày Ký</th>
+                <th>Giá Trị</th>
+                <th>Khách Hàng</th>
+                <th>Hành Động</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var hopDong in ViewBag.Contract)
+            {
+                <tr>
+                    <td>@hopDong.ContractName</td>
+                    <td>@hopDong.SigningDate.ToShortDateString()</td>
+                    <td>@hopDong.ContractValue.ToString("C")</td>
+                    <td>@hopDong.Customer.CustomerName</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@hopDong.ContractId" class="btn btn-warning">Sửa</a>
+                        <a asp-action="Delete" asp-route-id="@hopDong.ContractId" class="btn btn-danger">Xóa</a>
+                        <a asp-action="Details" asp-route-id="@hopDong.ContracId" class="btn btn-danger">chi tiết</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <a asp-controller="Contract" asp-action="Create" class="btn btn-primary mt-3">Thêm Hợp Đồng Mới</a>
+</div>
+

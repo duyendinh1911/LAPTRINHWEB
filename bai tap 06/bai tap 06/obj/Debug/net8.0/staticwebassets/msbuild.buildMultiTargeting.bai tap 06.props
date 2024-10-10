@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\bai tap 06.props" />
+</Project>

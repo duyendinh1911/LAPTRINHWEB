@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "DangNhap";
+}
+@{
+    Layout = "Layout3"; // Hoặc bất kỳ layout nào bạn muốn
+}
+
+@model SanPhamViewModel
+
+
+
+<h2>Thông tin sản phẩm</h2>
+<div>
+    <p>Tên sản phẩm: @Model.TenSanPham</p>
+    <p>Giá bán: @Model.GiaBan</p>
+    <img src="~/iced-americano.png" alt="AMERICANO" />
+</div>
